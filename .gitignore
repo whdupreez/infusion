@@ -86,3 +86,4 @@ $RECYCLE.BIN/
 target/
 *.log
 app.pid
+/build

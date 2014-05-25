@@ -1,3 +1,17 @@
+import io.undertow.Undertow;
+import io.undertow.server.handlers.resource.FileResourceManager;
+
+import static io.undertow.Handlers.resource;
+
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath("io.undertow:undertow-core:1.1.0.Beta1")
+	}
+}
 
 version = "0.0.1-SNAPSHOT"
 
@@ -7,6 +21,41 @@ project.ext {
 	template = "src/site/template"
 }
 
+task site << {
+
+	// Copy HTML.
+	copy {
+		from 'src/site/html'
+		into 'build/site'
+		include '**/*'
+	}
+
+	// Copy resources.
+	copy {
+		from 'src/site/resources'
+		into 'build/site'
+		include '**/*'
+	}
+
+}
+
 task siteInfo << {
 	println "Site: ${markdown}"
+}
+
+task preview << {
+
+	println "Starting Undertow Server ..."
+
+	Undertow server = Undertow.builder()
+		.addHttpListener(8080, "localhost")
+		.setHandler(resource(new FileResourceManager(file("build/site"), 100))
+			.setDirectoryListingEnabled(true))
+		.build();
+	server.start();
+
+	println "Undertow Server started: http://localhost:8080/"
+	println ""
+	println "Press any key to continue ..."
+	new BufferedReader(new InputStreamReader(System.in)).readLine()
 }
