@@ -1,0 +1,15 @@
+description = "Exposes gradle buildSrc for IDE support"
+apply plugin: "groovy"
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	compile gradleApi()
+	compile localGroovy()
+	compile("io.undertow:undertow-core:1.1.0.Beta1")
+}
+
+//configurations.archives.artifacts.clear()

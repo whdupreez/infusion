@@ -87,3 +87,4 @@ target/
 *.log
 app.pid
 /build
+/bin
