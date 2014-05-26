@@ -19,7 +19,13 @@ class InfusionPlugin implements Plugin<Project> {
 
 		project.extensions.create("infusion", InfusionPluginExtension, defaultSiteSrc, defaultSiteDist)
 
-		project.task("serve", group: "infusion",  type: InfusionServeTask) << {
+		project.task("site", group: "infusion",  type: InfusionSiteTask) << {
+			description = "Builds the site"
+			site project.infusion
+		}
+
+		project.task("serve", group: "infusion",  type: InfusionServeTask, dependsOn: "site") << {
+			description = "Serves the site"
 			serve project.infusion
 		}
 	}
