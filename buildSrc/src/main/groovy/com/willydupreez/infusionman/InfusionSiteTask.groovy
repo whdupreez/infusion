@@ -4,14 +4,31 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.InputDirectory;
+import org.gradle.api.tasks.OutputDirectories;
+import org.gradle.api.tasks.OutputDirectory;
 
 import com.willydupreez.infusionman.markdown.MarkdownProcessor
 
 class InfusionSiteTask extends DefaultTask {
 
-	private File md2html
+	@InputDirectory
+	File srcDir = project.file("src/site")
+
+	@OutputDirectory
+	File siteDir = project.file("build/site")
+
+	@OutputDirectory
+	File tmpDir = project.file("build/site-tmp")
 
 	def site(InfusionPluginExtension infusion) {
+
+//		srcDir.mkdirs()
+		siteDir.mkdirs()
+		tmpDir.mkdirs()
+
+		new File(project.buildDir, "site").mkdirs()
+		new File(project.buildDir, "site-tmp/md2html").mkdirs()
 
 		// Copy HTML.
 		project.copy {
@@ -38,18 +55,21 @@ class InfusionSiteTask extends DefaultTask {
 		// Copy Markdown into site-tmp.
 		project.copy {
 			from 'src/site/markdown'
-			into 'build/site-tmp/markdown'
+			into 'build/site-tmp/md2html'
 			include '**/*'
 		}
 
 		// Convert Markdown into HTML.
-		md2html = project.file("build/site-tmp/md2html")
-		Files.createDirectories(Paths.get(md2html.toURI()))
-
-		project.fileTree("build/site-tmp/markdown") {
+		project.fileTree("build/site-tmp/md2html") {
 			include "**/*.md"
 		}.each { File markdown ->
 			mdProcessor.process(markdown, htmlOut(markdown))
+		}
+
+		project.copy {
+			from 'build/site-tmp/md2html'
+			into 'build/site'
+			include '**/*.html'
 		}
 
 //		// Convert Markdown into HTML.
@@ -69,7 +89,7 @@ class InfusionSiteTask extends DefaultTask {
 	}
 
 	File htmlOut(File markdown) {
-		return new File(md2html, setExtension(markdown.name,  "html"))
+		return new File(markdown.parentFile, setExtension(markdown.name,  "html"))
 	}
 
 	private String setExtension(String filename, String extension) {

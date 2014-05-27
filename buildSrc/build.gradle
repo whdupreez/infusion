@@ -16,4 +16,4 @@ dependencies {
 	compile("org.pegdown:pegdown:${pegdownVersion}")
 }
 
-//configurations.archives.artifacts.clear()
+configurations.archives.artifacts.clear()

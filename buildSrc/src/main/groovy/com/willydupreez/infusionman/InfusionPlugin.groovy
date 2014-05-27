@@ -3,6 +3,7 @@ package com.willydupreez.infusionman
 import org.gradle.api.PathValidation;
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.InputDirectory;
 
 class InfusionPlugin implements Plugin<Project> {
 
@@ -13,9 +14,7 @@ class InfusionPlugin implements Plugin<Project> {
 			new File(project.projectDir, "src/site"),
 			PathValidation.DIRECTORY)
 
-		def defaultSiteDist = project.file(
-			new File(project.buildDir, "site"),
-			PathValidation.DIRECTORY)
+		def defaultSiteDist = new File(project.buildDir, "site")
 
 		project.extensions.create("infusion", InfusionPluginExtension, defaultSiteSrc, defaultSiteDist)
 
