@@ -1,4 +1,4 @@
-package com.willydupreez.infusionman.markdown
+package com.willydupreez.infusionman.processor
 
 import java.nio.file.Files;
 import java.nio.file.OpenOption;
