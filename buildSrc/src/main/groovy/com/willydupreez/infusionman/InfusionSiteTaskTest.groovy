@@ -1,22 +1,14 @@
 package com.willydupreez.infusionman
 
-import org.gradle.api.DefaultTask
-import org.gradle.api.tasks.InputDirectory
-import org.gradle.api.tasks.OutputDirectory
-import org.gradle.api.tasks.TaskAction;
+import org.gradle.api.Project
 
-import com.willydupreez.infusionman.processor.MarkdownProcessor;
-import com.willydupreez.infusionman.processor.TemplateProcessor;
+import com.willydupreez.infusionman.processor.MarkdownProcessor
+import com.willydupreez.infusionman.processor.TemplateProcessor
 
-class InfusionSiteTask extends DefaultTask {
+class InfusionSiteTaskTest {
 
-	@InputDirectory
 	File siteSrc
-
-	@OutputDirectory
 	File siteDist
-
-	@OutputDirectory
 	File siteTmp
 
 	private File siteSrcHtml
@@ -26,7 +18,12 @@ class InfusionSiteTask extends DefaultTask {
 
 	private File siteTmpMd2html
 
-	@TaskAction
+	private Project project
+
+	public InfusionSiteTaskTest(Project project) {
+		this.project = project
+	}
+
 	def site() {
 
 		siteSrcHtml 		= new File(siteSrc, "html")

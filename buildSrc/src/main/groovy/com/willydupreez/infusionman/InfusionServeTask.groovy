@@ -5,12 +5,20 @@ import io.undertow.Undertow
 import io.undertow.server.handlers.resource.FileResourceManager
 
 import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.InputDirectory;
 import org.gradle.api.tasks.TaskAction
 
 class InfusionServeTask extends DefaultTask {
 
-	def serve(InfusionPluginExtension infusion) {
-		startServing(infusion.siteDist, infusion.port)
+	boolean waitForKeypress = true
+	int port
+
+	@InputDirectory
+	File siteDist
+
+	@TaskAction
+	def serve() {
+		startServing(siteDist, port)
 	}
 
 	private void startServing(File site, int port) {
@@ -27,9 +35,12 @@ class InfusionServeTask extends DefaultTask {
 
 		logger.println "Server started: http://localhost:/${port}"
 		logger.println ""
-		logger.println "Press any key to continue ..."
 
-		waitForKeyPress()
+		if (waitForKeypress) {
+			logger.println "Press any key to continue ..."
+			logger.println ""
+			waitForKeyPress()
+		}
 	}
 
 	private void waitForKeyPress() {
