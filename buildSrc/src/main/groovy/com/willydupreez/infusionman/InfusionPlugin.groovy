@@ -1,14 +1,11 @@
 package com.willydupreez.infusionman
 
-import java.io.File;
-
 import org.gradle.api.PathValidation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
-import org.gradle.api.tasks.OutputDirectory;
 
-import com.willydupreez.infusionman.file.Watcher
+import com.willydupreez.infusionman.file.FilePatternWatcher
 
 class InfusionPlugin implements Plugin<Project> {
 
@@ -43,18 +40,19 @@ class InfusionPlugin implements Plugin<Project> {
 			siteDist = project.infusion.siteDist
 
 			doLast {
-				InfusionSiteTaskTest task = new InfusionSiteTaskTest(project)
-				task.siteSrc = project.infusion.siteSrc
-				task.siteDist = project.infusion.siteDist
-				task.siteTmp = project.infusion.siteTmp
-				Watcher watcher = new Watcher(project.infusion.siteSrc, task)
-				watcher.start();
-				println "waiting ..."
-				if (System.console() == null) {
-					new BufferedReader(new InputStreamReader(System.in)).readLine()
-				} else {
-					System.console().readLine()
-				}
+				new FilePatternWatcher(project.infusion.siteDist).run()
+//				InfusionSiteTaskTest task = new InfusionSiteTaskTest(project)
+//				task.siteSrc = project.infusion.siteSrc
+//				task.siteDist = project.infusion.siteDist
+//				task.siteTmp = project.infusion.siteTmp
+//				Watcher watcher = new Watcher(project.infusion.siteSrc, task)
+//				watcher.start();
+//				println "waiting ..."
+//				if (System.console() == null) {
+//					new BufferedReader(new InputStreamReader(System.in)).readLine()
+//				} else {
+//					System.console().readLine()
+//				}
 			}
 		}
 
