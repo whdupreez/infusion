@@ -1,4 +1,19 @@
-apply plugin: com.willydupreez.infusionman.InfusionPlugin
+buildscript {
+	configurations {
+		classpath {
+			resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+		}
+	}
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: "com.willydupreez.infusion", name:"gradle-infusion-plugin", version: "0.0.1-SNAPSHOT", changing: true
+	}
+}
+
+apply plugin: "infusion"
 
 group = "com.willydupreez.infusionman"
 version = "0.0.1-SNAPSHOT"
