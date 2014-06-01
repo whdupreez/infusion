@@ -3,11 +3,16 @@ package com.willydupreez.infusionman
 import org.gradle.api.PathValidation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.logging.Logger
+import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.Delete
 
-import com.willydupreez.infusionman.file.FilePatternWatcher
+import com.willydupreez.infusionman.watch.FilePatternWatcher
+import com.willydupreez.infusionman.watch.TaskRunner
 
 class InfusionPlugin implements Plugin<Project> {
+
+	private final Logger log = Logging.getLogger(InfusionPlugin.class)
 
 	@Override
 	public void apply(Project project) {
@@ -40,19 +45,23 @@ class InfusionPlugin implements Plugin<Project> {
 			siteDist = project.infusion.siteDist
 
 			doLast {
-				new FilePatternWatcher(project.infusion.siteDist).run()
+				FilePatternWatcher watcher = new FilePatternWatcher(project.infusion.siteSrc, { path ->
+					new TaskRunner(project.rootDir, project.getGradle().getGradleHomeDir()).run()
+				})
+				watcher.start()
 //				InfusionSiteTaskTest task = new InfusionSiteTaskTest(project)
 //				task.siteSrc = project.infusion.siteSrc
 //				task.siteDist = project.infusion.siteDist
 //				task.siteTmp = project.infusion.siteTmp
 //				Watcher watcher = new Watcher(project.infusion.siteSrc, task)
 //				watcher.start();
-//				println "waiting ..."
-//				if (System.console() == null) {
-//					new BufferedReader(new InputStreamReader(System.in)).readLine()
-//				} else {
-//					System.console().readLine()
-//				}
+				log.lifecycle "Watcher started. Press any key to stop ..."
+				if (System.console() == null) {
+					new BufferedReader(new InputStreamReader(System.in)).readLine()
+				} else {
+					System.console().readLine()
+				}
+				watcher.stop()
 			}
 		}
 
