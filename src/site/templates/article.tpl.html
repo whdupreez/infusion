@@ -5,6 +5,10 @@
 
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 
+		<script type="text/javascript" src="/comp/jquery-2.1.1/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/comp/sidebar-0.2.0/sidebar.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/comp/sidebar-0.2.0/sidebar.min.css">
+
 		<link rel="stylesheet" type="text/css" href="/css/articles.css">
 <!--         <link rel="stylesheet" type="text/css" href="css/dropdown.css"> -->
 
@@ -14,8 +18,8 @@
 
 <!-- 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 
-		<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" type="text/css" rel="stylesheet" />
-		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+<!-- 		<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" type="text/css" rel="stylesheet" /> -->
+<!-- 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script> -->
 
 		<!--[if lt IE 9]>
 		   <script>
@@ -37,34 +41,49 @@
 	</head>
 	<body>
 
-		<header>
-			<div id="container">
-				<div id="nav" >
-					<a href="/">
-						HOME
-					</a>
-					&nbsp;
-                    <ul class="categories-menu">
-                        <li>CATEGORIES <span>&#9445;</span>
-                            <ul>
-                                <li><a href="networking.html">Networking</a></li>
-                                <li><a href="osgi.html">OSGi</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-				</div>
-				</div>
-			<br />
-		</header>
+		<div class="wrapper jsc-sidebar-content jsc-sidebar-pulled">
+			<nav>
+				<a href="#" class="icon-menu link-menu jsc-sidebar-trigger"></a>
+			</nav>
+			<header>
+				<div id="container">
+					<div id="nav" >
+						<a href="/">
+							HOME
+						</a>
+						&nbsp;
+	                    <ul class="categories-menu">
+	                        <li>CATEGORIES <span>&#9445;</span>
+	                            <ul>
+	                                <li><a href="networking.html">Networking</a></li>
+	                                <li><a href="osgi.html">OSGi</a></li>
+	                            </ul>
+	                        </li>
+	                    </ul>
+					</div>
+					</div>
+				<br />
+			</header>
 
-		<article id="article">
-			${content}
-		</article>
+			<article id="article">
+				${content}
+			</article>
 
-		<footer class="page-footer">
-			<hr class="fade" />
-			<span>Copyright &copy; 2014 Willy du Preez</span>
-		</footer>
+			<footer class="page-footer">
+				<hr class="fade" />
+				<span>Copyright &copy; 2014 Willy du Preez</span>
+			</footer>
+		</div>
+
+		<nav class="sidebar jsc-sidebar" id="jsi-nav" data-sidebar-options="">
+			<ul class="sidebar-list">
+				<li><a href="./" class="current">SidebarJS</a></li>
+				<li><a href="http://github.com/makotot/sidebar/">View on Github</a></li>
+				<li><a href="http://github.com/makotot/sidebar/releases">Download</a></li>
+			</ul>
+		</nav>
+
+		<script type="text/javascript" src="/js/articles.js"></script>
 
 	</body>
 </html>
