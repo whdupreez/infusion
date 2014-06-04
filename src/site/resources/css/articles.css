@@ -1,7 +1,17 @@
-/* IE8 fixes. */
+/* ========================================
+	Styling for the articles index page
+   ======================================== */
+
+/* ----------------------------------------
+	IE8 fixes
+   ---------------------------------------- */
 header, nav, section, article, aside, footer {
    display:block;
 }
+
+/* ----------------------------------------
+	Base Style
+   ---------------------------------------- */
 
 html, body {
 	width: 100%;
@@ -10,29 +20,8 @@ html, body {
 
 body {
 	margin: 0;
-	background-color: #515151; /* Becomes sidebar background-color */
+	background-color: #FFF;
 	color: #333333;
-}
-
-div#container {
-	width: 75%;
-	margin: 0 auto;
-}
-
-div#nav {
-	padding: 10px;
-	float: right;
-	font-weight: 900;
-}
-
-div#nav a {
-	color: #999999;
-}
-
-div#nav a:hover, a:active, a:focus, a:link {
-	color: inherit;
-	text-decoration: none;
-	outline: 0;
 }
 
 footer.page-footer {
@@ -43,7 +32,7 @@ footer.page-footer {
 	width: 100%;
 }
 
-article#article {
+div.container {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	width: 60%;
@@ -68,143 +57,20 @@ h6 { font-size:0.9em; }
 /* ----------------------------------------
 	Links
    ---------------------------------------- */
-#article a, a:link {
+a, a:link {
 	color: #0645ad;
 	text-decoration:none;
 }
 
-#article a:visited { color: #660099; }
-#article a:hover { color: #0645ad; }
-#article a:active { color:#ff4422; }
-#article a:focus { outline: thin dotted; colour: #faa700 }
-#article a:hover, a:active { outline: 0; }
-
-/* ::-moz-selection { background:rgba(255,255,0,0.3);color:#000 } */
-/* ::selection { background:rgba(255,255,0,0.3);color:#000 } */
-
-/* a::-moz-selection { background:rgba(255,255,0,0.3);color:#0645ad } */
-/* a::selection { background:rgba(255,255,0,0.3);color:#0645ad } */
+a:visited { color: #660099; }
+a:hover { color: #0645ad; }
+a:active { color:#ff4422; }
+a:focus { outline: thin dotted; colour: #faa700 }
+a:hover, a:active { outline: 0; }
 
 /* ----------------------------------------
 	Elements
    ---------------------------------------- */
-
-#article p {
-	text-align: justify;
-}
-
-#article blockquote {
-	background-color: #EAEAEA;
-	border-bottom-right-radius: 5px;
-	border-top-right-radius: 5px;
-	border-left-color: #E0E0E0;
-	border-left-style: solid;
-	border-left-width: 10px;
-	font-size: 14px;
-	line-height: 20px;
-	padding: 0.1em 1em 0.1em 3em;
-	text-align: justify;
-	margin-right: 0;
-}
-
-#article img {
-	max-width:100%;
-	border: 0;
-	-ms-interpolation-mode: bicubic;
-	vertical-align: middle;
-}
-
-/* ----------------------------------------
-	Tables
-   ---------------------------------------- */
-#article table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	width: 100%;
-}
-
-#article td {
-	vertical-align: top;
-}
-
-#article table th {
-	background-color: #f8f8f8;
-	font-weight: 700;
-}
-
-#article table th, #article table td {
-	border: 1px solid #ccc;
-	padding: 6px 13px;
-}
-
-#article table tr {
-	border-top: 1px solid #ccc;
-	background-color: #fff;
-}
-
-/* #article table tr:nth-child(2n) { */
-/* 	background-color: #f8f8f8; */
-/* } */
-
-/* ----------------------------------------
-	Code Blocks
-   ---------------------------------------- */
-pre, code, tt {
-	font-size: 0.98em;
-	font-size: 13px;
-	line-height: 19px;
-	font-family: Consolas, Courier, Monospace;
-}
-
-code, tt {
-	margin: 0px;
-	padding: 2px;
-	white-space: pre-wrap;
-	border: 1px solid #eaeaea;
-	background-color: #f8f8f8;
-	border-radius: 3px;
-}
-
-pre {
-	background-color: #fafafa;
-	border: 1px solid #ccc;
-	overflow: auto;
-	padding: 6px 10px;
-	border-radius: 3px;
-}
-
-pre code, pre tt {
-	background-color: transparent;
-	border: none;
-	margin: 0;
-	padding: 0;
-	white-space: pre-wrap;
-	border: none;
-	background: transparent;
-}
-
-/* ----------------------------------------
-	Sidebar and overrides
-   ---------------------------------------- */
-
-a.icon-menu,
-a:hover.icon-menu,
-a:active.icon-menu,
-a:focus.icon-menu,
-a:link.icon-menu {
-	font-size: 2.1em;
-	font-weight: bold;
-	color: inherit;
-	text-decoration: none;
-	outline: 0;
-	margin: 5px;
-	padding: 5px;
-}
-
-.jsc-sidebar-content {
-	background-color: #FFF;
-}
-
 
 @media only screen and (min-width: 480px) {
 	body {
