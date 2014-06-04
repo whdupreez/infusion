@@ -10,7 +10,7 @@ html, body {
 
 body {
 	margin: 0;
-	background-color: #F1F1F1;
+	background-color: #515151; /* Becomes sidebar background-color */
 	color: #333333;
 }
 
@@ -46,8 +46,8 @@ footer.page-footer {
 article#article {
 	padding-top: 20px;
 	padding-bottom: 20px;
-	width: 50%;
-	min-width: 400px;
+	width: 60%;
+	min-width: 300px;
 	margin: 0 auto;
 }
 
@@ -182,6 +182,29 @@ pre code, pre tt {
 	border: none;
 	background: transparent;
 }
+
+/* ----------------------------------------
+	Sidebar and overrides
+   ---------------------------------------- */
+
+a.icon-menu,
+a:hover.icon-menu,
+a:active.icon-menu,
+a:focus.icon-menu,
+a:link.icon-menu {
+	font-size: 2.1em;
+	font-weight: bold;
+	color: inherit;
+	text-decoration: none;
+	outline: 0;
+	margin: 5px;
+	padding: 5px;
+}
+
+.jsc-sidebar-content {
+	background-color: #FFF;
+}
+
 
 @media only screen and (min-width: 480px) {
 	body {
