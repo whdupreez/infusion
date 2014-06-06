@@ -25,6 +25,9 @@ body {
 }
 
 footer.page-footer {
+	float: right;
+	min-width:100%;
+	max-width:100%;
 	font-size: 0.75em;
 	padding-bottom: 10px;
 	padding-top: 40px;
@@ -32,13 +35,57 @@ footer.page-footer {
 	width: 100%;
 }
 
-div.container {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	width: 60%;
-	min-width: 300px;
-	margin: 0 auto;
+footer hr {
+	border: none;
+	height: 1px;
+    color: #ddd;
+    background-color: #ddd;
 }
+
+div.container {
+	padding: 0px;
+	padding-top: 50px;
+	padding-bottom: 20px;
+/* 	width: 60%; */
+	min-width: 300px;
+	max-width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+div.box {
+/* 	float: left; */
+	display:inline-block;
+	font-size: 2em;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	width: 240px;
+	height: 240px;
+	line-height: 240px;
+	margin: 20px;
+	padding: 20px;
+}
+
+/* ----------------------------------------
+	Colours
+   ---------------------------------------- */
+
+.blue 	{ background-color: #1570a6; 	}
+.yellow { background-color: #fcd116; 	}
+.teal 	{ background-color: #00b294; 	}
+.purple { background-color: #7b4f9d; 	}
+.green 	{ background-color: #2A9C2A;	}
+.red 	{ background-color: #DA3B01; 	}
+.grey 	{ background-color: grey; 		}
+
+.blue:hover		{ background-color: #5AA3CE; 	}
+.yellow:hover 	{ background-color: #FCDE5C; 	}
+.teal:hover 	{ background-color: #70CCBD; 	}
+.purple:hover 	{ background-color: #987EAC; 	}
+.green:hover 	{ background-color: #62C762;	}
+.red:hover 		{ background-color: #F38056; 	}
+.grey:hover 	{ background-color: grey; 		}
 
 /* ----------------------------------------
 	Headings
