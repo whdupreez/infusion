@@ -215,6 +215,32 @@ a:link.icon-menu {
 	background-color: #FFF;
 }
 
+.sidebar {
+	background-color: #312f2f;
+}
+
+.sidebar ul {
+	list-style-type: none;
+/* 	padding: 0px; */
+}
+
+.sidebar li + li {
+	margin-top: 1px;
+}
+
+.sidebar li a {
+	padding: 4px 10px;
+	display: block;
+	color: #cecece;
+}
+
+.sidebar li a:hover {
+	background-color: #424242;
+}
+
+.sidebar li .current {
+	background-color: #51648b;
+}
 
 @media only screen and (min-width: 480px) {
 	body {
