@@ -29,22 +29,6 @@ div#container {
 	margin: 0 auto;
 }
 
-div#nav {
-	padding: 10px;
-	float: right;
-	font-weight: 900;
-}
-
-div#nav a {
-	color: #999999;
-}
-
-div#nav a:hover, a:active, a:focus, a:link {
-	color: inherit;
-	text-decoration: none;
-	outline: 0;
-}
-
 footer.page-footer {
 	font-size: 0.75em;
 	padding-bottom: 10px;
@@ -197,14 +181,23 @@ pre code, pre tt {
 	Sidebar and overrides
    ---------------------------------------- */
 
+svg {
+	width: 30px;
+	height: 30px;
+}
+
+nav.sidebar-nav {
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	top: 0;
+}
+
 a.icon-menu,
 a:hover.icon-menu,
 a:active.icon-menu,
 a:focus.icon-menu,
 a:link.icon-menu {
-	font-size: 2.1em;
-	font-weight: bold;
-	color: inherit;
 	text-decoration: none;
 	outline: 0;
 	margin: 5px;

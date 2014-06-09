@@ -104,16 +104,19 @@ h6 { font-size:0.9em; }
 /* ----------------------------------------
 	Links
    ---------------------------------------- */
-a, a:link {
-	color: #0645ad;
-	text-decoration:none;
-}
+/* a, a:link { */
+/* 	color: #0645ad; */
+/* 	text-decoration:none; */
+/* } */
 
-a:visited { color: #660099; }
-a:hover { color: #0645ad; }
-a:active { color:#ff4422; }
-a:focus { outline: thin dotted; colour: #faa700 }
-a:hover, a:active { outline: 0; }
+/* a:visited { color: #660099; } */
+/* a:hover { color: #0645ad; } */
+/* a:active { color:#ff4422; } */
+/* a:focus { outline: thin dotted; colour: #faa700 } */
+/* a:hover, a:active { outline: 0; } */
+a {
+	height: 0px;
+}
 
 /* ----------------------------------------
 	Elements
