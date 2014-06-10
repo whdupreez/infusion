@@ -115,6 +115,9 @@ h6 { font-size:0.9em; }
 /* a:focus { outline: thin dotted; colour: #faa700 } */
 /* a:hover, a:active { outline: 0; } */
 a {
+	text-decoration: none;
+	border: none;
+	width: 0px;
 	height: 0px;
 }
 
