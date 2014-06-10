@@ -3,6 +3,17 @@ var snapper = new Snap({
 	disable: 'right'
 });
 
+snapper.on('open', function(){
+	document.getElementById('toggle-menu').style.display = "none";
+});
+
+snapper.on('close', function(){
+	var delay = 200;
+	setTimeout(function(){
+		document.getElementById('toggle-menu').removeAttribute("style");
+	}, delay);
+});
+
 var addEvent = function addEvent(element, eventName, func) {
 	if (element.addEventListener) {
 		return element.addEventListener(eventName, func, false);

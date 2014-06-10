@@ -40,17 +40,17 @@
 	</head>
 	<body>
 
-		<div id="content" class="snap-content">
+		<nav id="toggle-menu" class="toggle-menu">
+			<a href="#" id="open-left">
+				<svg>
+					<path d="M0,6 30,6" stroke="#000" stroke-width="4"/>
+					<path d="M0,16 30,16" stroke="#000" stroke-width="4"/>
+					<path d="M0,26 30,26" stroke="#000" stroke-width="4"/>
+				</svg>
+			</a>
+		</nav>
 
-			<nav class="toggle-menu">
-				<a href="#" id="open-left">
-					<svg>
-						<path d="M0,6 30,6" stroke="#000" stroke-width="4"/>
-						<path d="M0,16 30,16" stroke="#000" stroke-width="4"/>
-						<path d="M0,26 30,26" stroke="#000" stroke-width="4"/>
-					</svg>
-				</a>
-			</nav>
+		<div id="content" class="snap-content">
 
 			<article id="article">
 				${content}
