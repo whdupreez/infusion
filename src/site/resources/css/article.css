@@ -181,59 +181,88 @@ pre code, pre tt {
 	Sidebar and overrides
    ---------------------------------------- */
 
-svg {
-	width: 30px;
-	height: 30px;
-}
-
-nav.sidebar-nav {
+nav..toggle-menu {
 	width: 100%;
 	height: 30px;
-	position: absolute;
-	top: 0;
+/* 	position: absolute; */
+/* 	top: 0; */
 }
 
-a.icon-menu,
-a:hover.icon-menu,
-a:active.icon-menu,
-a:focus.icon-menu,
-a:link.icon-menu {
+nav.toggle-menu a,
+nav.toggle-menu a:hover,
+nav.toggle-menu a:active,
+nav.toggle-menu a:focus,
+nav.toggle-menu a:link {
 	text-decoration: none;
 	outline: 0;
 	margin: 5px;
 	padding: 5px;
 }
 
-.jsc-sidebar-content {
-	background-color: #FFF;
+nav.toggle-menu a svg {
+	width: 30px;
+	height: 30px;
 }
 
-.sidebar {
-	background-color: #312f2f;
+.snap-content {
+	background-color: #fff;
 }
 
-.sidebar ul {
+.snap-drawers {
+	background: #515151;
+}
+
+.snap-drawer {
+	background: #515151;
+}
+
+.snap-drawer h3 {
+	font-size: 36px;
+	font-weight: normal;
+	margin: 15px;
+}
+
+.snap-drawer h4 {
+	color: #fff;
+	padding: 15px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.snap-drawer ul {
+	padding: 0;
+	margin: 0;
 	list-style-type: none;
-/* 	padding: 0px; */
 }
 
-.sidebar li + li {
-	margin-top: 1px;
-}
-
-.sidebar li a {
-	padding: 4px 10px;
+.snap-drawer li > a {
 	display: block;
-	color: #cecece;
+	border-bottom: 1px solid rgba(0,0,0, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 15px;
+	text-decoration: none;
+	color: #ccc;
+	text-indent: 20px;
 }
 
-.sidebar li a:hover {
+.snap-drawer li a:hover {
 	background-color: #424242;
 }
 
-.sidebar li .current {
+.snap-drawer li .current {
 	background-color: #51648b;
 }
+
+.snap-drawer p {
+  opacity: 0.5;
+  padding: 15px;
+  font-size: 12px;
+}
+
+/* ----------------------------------------
+	Media configuration
+   ---------------------------------------- */
 
 @media only screen and (min-width: 480px) {
 	body {

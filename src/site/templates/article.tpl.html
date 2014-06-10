@@ -2,21 +2,20 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<!-- 		<meta content="width=device-width, initial-scale=1.0" name="viewport"> -->
+        <meta http-equiv="x-ua-compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
 		<meta content="Willy du Preez" name="author">
 		<meta content="" name="description">
 
 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 
-<!-- 		<script type="text/javascript" src="/comp/jquery-2.1.1/jquery-2.1.1.min.js"></script> -->
-<!-- 		<script type="text/javascript" src="/comp/sidebar-0.2.0/sidebar.min.js"></script> -->
-<!-- 		<link rel="stylesheet" type="text/css" href="/comp/sidebar-0.2.0/sidebar.min.css"> -->
 		<script type="text/javascript" src="/comp/snap.js-1.9.3/snap.js"></script>
 		<link rel="stylesheet" type="text/css" href="/comp/snap.js-1.9.3/snap.css">
 
 		<link rel="stylesheet" type="text/css" href="/css/article.css">
-
-<!-- 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 
 <!-- 		<link href="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" type="text/css" rel="stylesheet" /> -->
 <!-- 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script> -->
@@ -43,8 +42,8 @@
 
 		<div id="content" class="snap-content">
 
-			<nav class="sidebar-nav">
-				<a href="#" id="open-left" class="icon-menu">
+			<nav class="toggle-menu">
+				<a href="#" id="open-left">
 					<svg>
 						<path d="M0,6 30,6" stroke="#000" stroke-width="4"/>
 						<path d="M0,16 30,16" stroke="#000" stroke-width="4"/>
@@ -63,21 +62,29 @@
 			</footer>
 		</div>
 
-<!-- 		<nav class="sidebar jsc-sidebar" id="jsi-nav" data-sidebar-options=""> -->
-<!-- 			<ul class="sidebar-list"> -->
-<!-- 				<li><a href="/" class="current">Home</a></li> -->
-<!-- 				<li><a href="/articles" class="current">Articles</a></li> -->
-<!-- 				<li><a href="/about" class="current">About</a></li> -->
-<!-- 			</ul> -->
-<!-- 			<ul class="sidebar-list"> -->
-<!-- 				<li><a href="/articles/java" class="current">Java</a></li> -->
-<!-- 				<li><a href="/articles/javascript" class="current">JavaScript</a></li> -->
-<!-- 				<li><a href="/articles/networking" class="current">Networking</a></li> -->
-<!-- 				<li><a href="/articles/osgi" class="current">OSGi</a></li> -->
-<!-- 				<li><a href="/articles/php" class="current">PHP</a></li> -->
-<!-- 				<li><a href="/articles/scala" class="current">Scala</a></li> -->
-<!-- 			</ul> -->
-<!-- 		</nav> -->
+		<div class="snap-drawers">
+			<div class="snap-drawer snap-drawer-left">
+				<div>
+					<nav>
+						<h4>Menu</h4>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/articles">Articles</a></li>
+							<li><a href="/about">About</a></li>
+						</ul>
+						<h4>Articles</h4>
+						<ul>
+							<li><a href="/articles/java">Java</a></li>
+							<li><a href="/articles/javascript">JavaScript</a></li>
+							<li><a href="/articles/networking">Networking</a></li>
+							<li><a href="/articles/osgi">OSGi</a></li>
+							<li><a href="/articles/php">PHP</a></li>
+							<li><a href="/articles/scala">Scala</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
 
 		<script type="text/javascript" src="/js/articles.js"></script>
 
