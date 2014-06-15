@@ -12,4 +12,4 @@ The Open System Interconnection (OSI) model (<a href="http://www.ecma-internatio
 
 Articles related to networking in general.
 
-<a href="article=ssh-tunneling">SSH Tunneling (Port Forwarding)</a>
+<a href="ssh-tunneling.html">SSH Tunneling (Port Forwarding)</a>
