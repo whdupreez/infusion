@@ -18,12 +18,6 @@ apply plugin: "infusion"
 group = "com.willydupreez.infusionman"
 version = "0.0.1-SNAPSHOT"
 
-project.ext {
-	markdown = "src/site/markdown"
-	resources = "src/site/resources"
-	template = "src/site/template"
-}
-
 task wrapper(type: Wrapper) {
 	gradleVersion = "1.12"
 }
