@@ -10,4 +10,6 @@ The most common Open Source implementation are Apache Felix, Eclipse Equinox and
 
 [Apache Karaf](http://karaf.apache.org/ "Apache Karaf") is a lightweight OSGi container. It provides additional management features on top of standard OSGi runtimes such as a logging system, remote access, dynamic configuration, an extensible shell console and much more.
 
-[Provisioning applications using features](apache-karaf-features.html "Provisioning applications using features")
+* [Provisioning applications using features](apache-karaf-features.html "Provisioning applications using features")
+* [Configuration Property Placeholder](apache-karaf-configuration-property-placeholder.html "Configuration Property Placeholder")
+* [URL Handlers](apache-karaf-url-handlers.html "URL Handlers")
