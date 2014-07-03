@@ -1,3 +1,4 @@
 # Infusionman
 
-Site builder usage example.
+Gradle Infusion Plugin example to build a site.
+
