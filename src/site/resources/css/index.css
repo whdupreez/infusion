@@ -24,6 +24,14 @@ body {
 	color: #333333;
 }
 
+.construction {
+	z-index: 1000;
+	float: right;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
 footer.page-footer {
 	float: right;
 	min-width:100%;
