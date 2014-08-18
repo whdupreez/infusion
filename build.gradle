@@ -15,7 +15,7 @@ buildscript {
 
 apply plugin: "infusion"
 
-group = "com.willydupreez.infusionman"
+group = "com.willydupreez.site"
 version = "0.0.1-SNAPSHOT"
 
 task wrapper(type: Wrapper) {
